@@ -1,0 +1,189 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{appendix}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+
+\title{ROSE Online Multiclienting Guide}
+\author{Rusty}
+\date{May 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Method 1: Alt + Esc}
+\label{section: method1}
+
+You may skip the instructions below by watching this \href{https://www.youtube.com/watch?v=Loo_phNvK50}{video tutorial}.
+
+\begin{enumerate}
+   \item Make a new \textbf{Virtual Desktop}
+   \begin{itemize}
+     \item \textbf{\{Win + Tab\}} $\rightarrow$ \textbf{New Desktop}
+   \end{itemize}
+   \item Separate Bourg clients from the other windows (including the Cleric client)
+   \begin{itemize}
+     \item You may move windows between virtual desktops by \textbf{dragging and dropping} from \textbf{\{Win+Tab\}}
+   \end{itemize}
+   \item Switch between Virtual Desktops
+   \begin{itemize}
+     \item \textbf{\{Win + Ctrl + $\rightarrow$\}}
+     \item \textbf{\{Win + Ctrl + $\leftarrow$\}}
+   \end{itemize}
+   \item \textbf{\{Alt + Esc\}} on the virtual desktop containing the Bourg Clients
+   \begin{itemize}
+     \item Make sure that the \textbf{bourg clients and skillbars are aligned}
+     \item Enable \textbf{Right Click Icon} in ROSE Clients
+     \item To use a skill ala scripting, \textbf{\{Alt + Esc\}} then \textbf{Right Click }
+   \end{itemize}
+   \item Refer to Appendix: \nameref{appendix: Tips} for some rule of the thumb in using this method.
+ 
+\end{enumerate}
+
+\section{Method 2: Activating a window by Mouse Hover}
+\label{section: method2}
+
+\textbf{WARNING} I highly discourage you from using this method if you are not comfortable with \textbf{editing and restoring Registry Settings}. If this is the case for you, please consider testing this method first on a \href{https://support.microsoft.com/en-us/help/4026923/windows-10-create-a-local-user-or-administrator-account}{dummy local Windows User Account}. 
+
+You may skip the instructions below by watching this INSERT VIDEO LINK HERE. 
+
+\subsection{Make Mouse Hover activate a window}
+\label{subsection: mouse_hover_enable}
+\begin{enumerate}
+   \item Open \textbf{Control Panel}
+   \item Search for \textbf{Ease of Access Center}
+   \item Click \textbf{Change how your mouse works}
+   \item Check \textbf{Activate a window by hovering over it with the mouse}
+   \begin{itemize}
+     \item Click \textbf{Apply} $\rightarrow$ \textbf{OK}
+   \end{itemize}
+   \item Test if hovering your pointer over it a window indeed activates it
+   \label{mouse_hover_test}
+\end{enumerate}
+
+\subsection{Removing the Delay in Mouse Hover Activate}
+
+You might have noticed in \ref{subsection: mouse_hover_enable}.\ref{mouse_hover_test} that there's a slight delay with mouse hover. To remove this delay, we will need to edit some values in Registry Editor
+
+\begin{enumerate}
+   \item Open \textbf{Registry Editor}
+   \item Go to \textbf{HKEY\_CURRENT\_USER/CONTROL\_PANEL/DESKTOP}
+   \item Search for \textbf{ActiveWndTrkTimeout}
+   \begin{itemize}
+     \item Double click it and the \textbf{Value Data} to \textbf{0}
+   \end{itemize}
+   \item You would need to \textbf{sign out from and sign back in to your user account} to activate this change.
+\end{enumerate}
+
+\subsection{Tips for using Mouse Hover}
+
+\begin{enumerate}
+   \item Organize your ROSE Clients such that you can see every client in your screen
+   \item Use mouse to activate a window, use keyboard to cast skill
+   \item Get a big monitor. If you don't have a monitor, you may refer to Appendix \ref{appenfix: monitor}
+   \item Given a 2560x1440 monitor, you would probably need to set each client to 720p if you want to do 5 bourg farming + cleric,
+   \item (Optional) As you may have observed in my \href{https://www.youtube.com/watch?v=-E__d2IBEM0&list=PLVUbtDqG7l80M84sE1TMZNl3Agw9TTmLQ&index=2&t=0s}{Verm Videos} and \href{https://www.youtube.com/watch?v=vq8f05UDmdI}{Dungeon Video}, I was aggressively swinging my mouse pointers over a client. 
+\end{enumerate}
+
+\subsection{(Optional) Restoring from the Changes Above}
+\begin{enumerate}
+   \item Uncheck \textbf{Activate a window by hovering over it with the mouse}
+   \item Sign out from and sign back in to your user account
+\end{enumerate}
+
+
+\section{Pros and Cons}
+
+\subsection{Method 1}
+   \item Pros
+   \begin{enumerate}
+     \item  This \textbf{does not require you to have a big screen}, since most of the time, ROSE Clients are stacked with each other and that Virtual Desktop is used to organize the other windows. It is perfect for chill farmers. According to \href{https://forum.aruarose.com/members/drepyz.5832/}{Drepyz}, you can Netflix while farming with this method.
+   \end{enumerate}
+   
+   \item Cons
+   \begin{enumerate}
+     \item There is an \textbf{inherent delay when accessing clients}. For example Alt + Esc switches in the order of \{Client1, Client2, Client3, Client4, Client5\}. You are currently in Client1 but you see that Client5 has less than 200 HP. In order to access Client5, you'd need to go through Client2, Client3, and Client4 first. 
+     
+   \end{enumerate}
+
+\subsection{Method 2}
+
+   \item Pros
+   \begin{enumerate}
+     \item There's \textbf{almost 0 delay when using skills}. It's almost like you are scripting from an observer's perspective. Perfect for dual client/triple client set ups. 
+   
+     \item In contrast, with Method 2, you \textbf{can easily access clients} since you have the option to view every ROSE client in your screen. 
+     
+     \item You are \textbf{not forced to use Right Clicks to cast skills}. You don't need to stack the clients and skills bars either. Good old fashioned Functions keys are used to skill.
+     
+     \item You don't need to but with Background Render on, you can easily monitor every ROSE Client.
+     
+     \item You don't need to make a virtual desktop to organize the access of windows.
+   \end{enumerate}
+   
+     
+   
+   \item Cons
+   \begin{enumerate}
+     \item You \textbf{need a big monitor and a fat GPU}, especially if you are planning to do 5-bourg farming. I use at least a 2560x1440 monitor when doing 5 bourg farming, having 720p resolution. You may force your 1080p monitors to render 1440p or even high resolutions by following \textbf{Appendix \ref{appenfix: monitor}}.
+     
+   \end{enumerate}
+
+\section{Conclusion and Recommendation}
+
+I personally use Method 2 when farming Verm but that's only because I have high-end GPU and a big monitor. Method 1 is still a good and effective option for most of the users. 
+
+\appendix
+\appendixpage
+\addappheadtotoc
+
+\section{Forcing a Monitor to Render High Resolution Screen (Nvidia)}
+\label{appenfix: monitor}
+
+\textbf{NOTE} This only applies for Nvidia Monitors/GPU. If you are using a different device, please refer to Google.
+
+Make sure that you have \textbf{Nvidia Control Panel}. If you don't have it, \href{https://www.geforce.com/drivers}{follow the instructions in the Nvidia site}.
+\begin{enumerate}
+   \item Open \textbf{Nvidia Control Panel}
+   \item Go to \textbf{Display} $\rightarrow$ \textbf{Change Resolution}
+   \begin{itemize}
+     \item Here you will see the default resolutions supported by your monitor and GPU. Choose your desired resolution and click \textbf{Apply}. 
+     \item If you don't see an option for your desired resolution (e.g. if you have a 1920x1080 monitor and you want to render 2560x1440 screen), proceed to 3.
+   \end{itemize}
+   \item On the same window, click \textbf{Customize}
+   \begin{itemize}
+     \item Click \textbf{Create Custom Resolution} $\rightarrow$ \textbf{Accept}
+     \item Change the values of Horizon Pixels, Vertical Lines, and Refresh Rate. For Method \ref{section: method2}, I highly suggest the following settings:
+     \begin{itemize}
+         \item Horizon Pixels: 2560
+         \item Vertical Lines: 1440
+         \item Refresh Rate: 60Hz or 120Hz or 144Hz
+     \end{itemize}
+     \item Click \textbf{Test} $\rightarrow$ \textbf{Yes}
+   \end{itemize}
+   \item Select the Custom Resolution and Click \textbf{OK} and \textbf{Apply}
+   \begin{itemize}
+     \item In some cases, Nvidia may fail to change your resolution but don't worry. If this happens, proceed to 5.
+   \end{itemize}
+   \item (Optional) Right Click on your Desktop and select \textbf{Display Settings}
+   \begin{itemize}
+     \item You should be able to see the custom resolution profile we made a while ago under \textbf{Display resolution}
+     \item Click the \textbf{Custom Resolution} $\rightarrow$ \textbf{Keep Changes}
+   \end{itemize}
+ 
+\end{enumerate}
+
+\section{Tips from the Community}
+\label{appendix: Tips}
+1. \href{https://www.youtube.com/watch?v=Loo_phNvK50&lc=UgwaeU81GHIVYZ_IGgl4AaABAg}{Laurent Frenette on Method 1}
+
+\begin{itemize}
+  \item To ensure a smooth transition whenever you are cycling over bourgs, you should \textbf{enable Background Render} in the options
+  \item \textbf{Enable Right Click Icons} so you can use skills with the mouse right click.
+  \item Try to \textbf{put your pots on F1 or F2}, so you can use them easily with the same hand that does the Alt + Esc cycling. The other hand will be responsible for clicking and using skills (all with the mouse).
+  \item Try to \textbf{have about the same camera view on every bourg} to increase your accuracy when clicking. A good trick is to \textbf{walk with every bourg}, so whenever you miss-click, your bourg won't run away quickly and you'll have time to reclick in the middle to reposition it with the others.
+\end{itemize}
+
+\end{document}
